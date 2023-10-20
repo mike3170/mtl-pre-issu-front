@@ -1,0 +1,20 @@
+	<div mat-dialog-title class="alert-title" >
+		<div class="title">確認視窗</div>
+		<mat-icon class="close"  mat-dialog-close>close</mat-icon>
+	</div>
+
+	<div class="alert-content" mat-dialog-content>
+		<img src="assets/img/confirm.svg" >
+		<h3 class="message">{{msg}}</h3>
+	</div>
+
+	<div mat-dialog-actions>
+		<div class="alert-actions">
+			<button mat-button (click)="dialogRef.close('N')">
+					<mat-icon>cancel</mat-icon>取消
+			</button>
+			<button mat-flat-button color="primary" cdkFocusInitial (click)="dialogRef.close('Y')">
+					<mat-icon>done</mat-icon>確定
+			</button>
+		</div>
+	</div>

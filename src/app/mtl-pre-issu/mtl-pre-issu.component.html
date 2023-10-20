@@ -1,0 +1,24 @@
+<div style="width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;margin-top: 3%;">
+  <div style="width: 95%; display: flex;">
+    <button mat-raised-button color="primary" (click)="onQuery()">重新整理</button>
+    <button style="display: flex;margin-left: auto; margin-right: 0;" mat-raised-button color="primary"
+      (click)="onInsert()">轉入領用</button>
+  </div>
+</div>
+
+
+
+<ag-grid-angular 
+                 class="ag-theme-alpine" 
+                 style="width: 95%; height: 80%; margin: 2% auto; font-size: medium;" 
+                 [columnDefs]="columnDefs"
+                 [rowData]="data"
+                 [rowSelection]="'multiple'" 
+                 [animateRows]="true"
+                 [rowClassRules]="rowClassRules"
+                 (gridReady)="onGridReady($event)"
+                 >
+</ag-grid-angular>

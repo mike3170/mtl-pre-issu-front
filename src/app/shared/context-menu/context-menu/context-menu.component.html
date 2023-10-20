@@ -1,0 +1,17 @@
+<section class="my-contextmenu">
+   <div class="menu-item" (click)="action('insert-below')">新增下方列</div>
+   <div class="menu-item" (click)="action('insert-above')">新增上方列</div>
+   <div class="menu-item" (click)="action('hello')">Hello</div>
+
+   <div class="menu-item" (click)="action('remove')"
+       style="display: flex; align-items: center">
+      <span>刪除選取列</span>
+      <mat-icon style="margin-left: auto; color: red" >delete</mat-icon>
+   </div>
+
+   <div class="menu-item" (click)="action('close')"
+      style="display: flex; align-items: center">
+      <span>關閉</span>
+      <mat-icon style="margin-left: auto">close</mat-icon>
+   </div>
+</section>

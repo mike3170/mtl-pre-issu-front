@@ -1,0 +1,31 @@
+
+.my-contextmenu {
+   display: flex;
+   flex-direction: column;
+	 background-color: white;
+
+
+   border: 1px rgb(230,230,230) solid !important;
+   border-radius: 5px !important;
+   box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
+
+   .menu-item {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 5px 1rem;
+      &:hover {
+         background: teal;
+         color: white;
+      }
+   }
+
+   .menu-item:first-child {
+      margin-top: .5rem;
+   }
+   .menu-item:last-child {
+      margin-bottom: .5rem;
+   }
+
+
+}

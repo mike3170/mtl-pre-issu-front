@@ -1,0 +1,22 @@
+<div mat-dialog-title class="alert-title" >
+	<div class="title">確認視窗</div>
+	<mat-icon class="close"  mat-dialog-close>close</mat-icon>
+</div>
+
+<div class="alert-content" mat-dialog-content>
+	<img src="assets/img/confirm.svg" >
+	<h3 class="message">{{msg}}</h3>
+</div>
+
+
+<div mat-dialog-actions>
+   <div class="dialog-actions">
+      <button mat-stroked-button color="warn" (click)="close('stay')">
+        取消<mat-icon>cancel</mat-icon>
+      </button>
+
+      <button mat-flat-button color="primary" (click)="close('leave')">
+        繼續<mat-icon>navigate_next</mat-icon>
+      </button>
+   </div>
+</div>

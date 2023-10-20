@@ -1,0 +1,18 @@
+<div mat-dialog-title class="alert-title" >
+	<div class="title">警告視窗</div>
+	<mat-icon class="close"  mat-dialog-close>close</mat-icon>
+</div>
+
+<div class="alert-content" mat-dialog-content>
+	<img src="assets/img/alert.svg" >
+  <h3 class="message"  >{{title}}</h3>
+  <h3 *ngIf="reason" class="message"  >{{reason}}</h3>
+</div>
+
+<div mat-dialog-actions>
+		<div class="alert-actions">
+			<button mat-button color="primary" mat-dialog-close>
+					<mat-icon>close</mat-icon>關閉
+			</button>
+		</div>
+</div>

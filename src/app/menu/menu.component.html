@@ -1,0 +1,31 @@
+<div style="margin-right: 0.5rem;">
+    <button mat-button [matMenuTriggerFor]="formMenu">
+        <mat-icon class="manu-icon">list</mat-icon>
+    </button>
+</div>
+
+
+<mat-menu #formMenu="matMenu">
+    <button mat-menu-item (click)="goProg('main')"><label>首頁</label></button>
+    <button mat-menu-item [matMenuTriggerFor]="bas"><label>客戶/廠商建檔</label></button>
+    <button mat-menu-item [matMenuTriggerFor]="pur"><label>採購管理模組</label></button>
+    <button mat-menu-item [matMenuTriggerFor]="mtl"><label>物料管理模組</label></button>
+    <button mat-menu-item [matMenuTriggerFor]="test"><label>測試模組</label></button>
+    
+</mat-menu>
+
+<mat-menu #bas="matMenu">
+    <button mat-menu-item (click)="goProg('basvenmast')"><label>廠商基本資料建檔</label></button>
+</mat-menu>
+
+<mat-menu #pur="matMenu">
+    <button mat-menu-item (click)="goProg('pur0310m')"><label>採購單資料輸入</label></button>
+</mat-menu>
+
+<mat-menu #mtl="matMenu">
+    <button mat-menu-item (click)="goProg('mtlmast')"><label>物料基本資料建檔</label></button>
+</mat-menu>
+
+<mat-menu #test="matMenu">
+    <button mat-menu-item (click)="goProg('test')"><label>測試</label></button>
+</mat-menu>

@@ -1,0 +1,23 @@
+<div mat-dialog-title class="alert-title" >
+	<div class="title">錯誤視窗</div>
+	<mat-icon class="close"  mat-dialog-close>close</mat-icon>
+</div>
+
+<div class="alert-content" mat-dialog-content>
+	<img src="assets/img/error.svg" >
+  <div class="multi-line">
+    <ng-container *ngFor="let line of msgArr; let i = index">
+      <h3 *ngIf="i == 0" class="message" >{{line}}</h3>
+      <h3 *ngIf="i !== 0" class="message">{{line}}</h3>
+    </ng-container>
+  </div>
+</div>
+
+
+<div mat-dialog-actions>
+	<div class="alert-actions">
+		<button mat-button color="primary" mat-dialog-close>
+					<mat-icon>close</mat-icon>關閉
+		</button>
+	</div>
+</div>

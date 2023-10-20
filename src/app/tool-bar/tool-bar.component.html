@@ -1,0 +1,39 @@
+<div class="title-bar">
+  <div class="flex-row">
+    <div class="font-test">
+      {{progTitleChild}}
+    </div>    
+    <button mat-flat-button color="tool-btn" class="tool-btn" (click)="onInsert()">
+      <mat-icon class="mat-icon">add</mat-icon>
+      新增
+    </button>
+    <button mat-flat-button color="tool-btn" class="tool-btn" (click)="onUdpate()" [disabled]="!hasData">
+      <mat-icon class="mat-icon">edit</mat-icon>
+      修改
+    </button>
+    <button mat-flat-button color="tool-btn" class="tool-btn" (click)="onDelete()" [disabled]="!hasData">
+      <mat-icon class="mat-icon">delete</mat-icon>
+      刪除
+    </button>
+    <button mat-flat-button color="tool-btn" class="tool-btn" (click)="onQuery()">
+      <mat-icon class="mat-icon">search</mat-icon>
+      全部查詢
+    </button>
+    <button mat-flat-button color="tool-btn" class="tool-btn" (click)="onFindWindow()">
+      <mat-icon class="mat-icon">find_in_page</mat-icon>
+      查詢視窗
+    </button>
+    <button mat-flat-button color="tool-btn" class="tool-btn" (click)="onPrev()" [disabled]="!hasData">
+      <mat-icon class="mat-icon">navigate_before</mat-icon>
+      上筆
+    </button>
+    <button mat-flat-button color="tool-btn" class="tool-btn" (click)="onNext()" [disabled]="!hasData">
+      <mat-icon class="mat-icon">navigate_next</mat-icon>
+      下筆
+    </button>
+    <button mat-flat-button color="tool-btn" (click)="onClearForm()">
+      <mat-icon class="mat-icon">clear</mat-icon>
+      清除
+    </button>
+  </div>
+</div>

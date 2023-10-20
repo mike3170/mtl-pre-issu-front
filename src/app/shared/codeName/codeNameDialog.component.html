@@ -1,0 +1,53 @@
+<header>
+  <div mat-dialog-title style="font-size: 1.1rem; margin: 0">{{title}}</div> 
+</header>
+
+<section class="input-box">
+  <form [formGroup]="form1">
+    <input formControlName="code" cdkFocusInitial placeholder="代碼" />
+    <input formControlName="name" placeholder="名稱" />
+    <button type="submit" mat-raised-button color="primary" (click)="query()">
+      <mat-icon>search</mat-icon>查詢
+    </button>
+  </form>
+
+  <!--
+  <div *ngIf="loading" class="loading">
+    <div> 查詢中... </div>
+    <mat-spinner diameter="70"></mat-spinner>
+  </div>
+-->
+
+</section>
+
+
+<mat-dialog-content>
+  <ng-container *ngIf="dataList.length > 0; else noData">
+    <table style="width: 100%;">
+      <thead>
+        <tr>
+					<td>seq</td>
+          <th *ngFor="let col of columnDefs">{{col.headerName}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of dataList; let i = index" (click)="closeDialog(data)">
+					<td>{{i+ 1}}</td>
+          <td *ngFor="let col of columnDefs">{{data[col.field]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <div style="width: 100%;display: flex; justify-content: flex-end">
+    <button mat-stroked-button (click)="dialogRef.close(null)">
+      <mat-icon>close</mat-icon>關閉
+    </button>
+  </div>
+</mat-dialog-actions>
+
+<ng-template #noData>
+    <div style="font-size: 1.2rem; font-weight: bold; color: blue">無資料,請輸入查詢條件.</div>
+</ng-template>

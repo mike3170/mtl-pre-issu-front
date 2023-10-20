@@ -1,0 +1,18 @@
+<div class="banner">
+	<!-- <app-menu></app-menu> -->
+	<div class="company-name">晉禾企業股份有限公司
+	</div>
+	<div class="logout-banner">
+		<div class="login-user">
+			{{authUserName}}
+		</div>
+		<div *ngIf="chkAuth()" (click)="doLogout()">
+			<mat-icon class="logout-buttom">logout</mat-icon>
+		</div>
+	</div>
+</div>
+
+<router-outlet></router-outlet>
+<div *ngIf="isLoading$ |async">
+	<app-spinner></app-spinner>
+</div>

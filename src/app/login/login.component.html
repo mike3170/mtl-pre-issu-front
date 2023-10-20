@@ -1,0 +1,22 @@
+<div class="login">
+    <form [formGroup]="loginForm">
+        <table>
+            <tr>
+                <td>帳號</td>
+                <td><input formControlName="userName" upper-case></td>
+            </tr>
+            <tr>
+                <td>密碼</td>
+                <td><input formControlName="passWord" type="password"></td>
+            </tr>
+            <br>
+            <!-- <tr
+                style="width: 200px; margin:0px auto; display:flex; justify-content:flex-end; margin-bottom: -30px; margin-top: 30px;"> -->
+            <tr>
+                <td colspan="2">
+                    <button mat-button class="mat-login-btn" (click)="doLogin()">登入</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

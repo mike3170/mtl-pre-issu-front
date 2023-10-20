@@ -1,0 +1,14 @@
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+
+.crea-time-safe {
+    background-color: rgb(120, 221, 86) !important;
+  }
+
+.crea-time-warning {
+    background-color: sandybrown !important;
+  }
+  
+.crea-time-danger {
+    background-color: lightcoral !important;
+  }
