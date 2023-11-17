@@ -1,0 +1,25 @@
+<div>
+	<div class="cancel-btn-outer-div">
+		<button mat-mini-fab color='cancel-button' (click)="cancel()"><mat-icon>close</mat-icon></button>
+	</div>
+</div>
+<mat-dialog-content>
+	<table *ngIf="newOldList.length > 0; else noData">
+		<thead>
+			<tr>
+				<th>新舊</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let c of newOldList" (click)="select(c)">
+				<td><div class="content-font-size">{{c.newOld}}</div></td>
+			</tr>
+		</tbody>
+	</table>
+</mat-dialog-content>
+
+<ng-template #noData>
+	<h2>
+		{{mesg}}
+	</h2>
+</ng-template>

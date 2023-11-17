@@ -1,0 +1,25 @@
+<div>
+	<div class="cancel-btn-outer-div">
+		<button mat-mini-fab color='cancel-button' (click)="cancel()"><mat-icon>close</mat-icon></button>
+	</div>
+</div>
+<mat-dialog-content>
+	<table *ngIf="mtlSeqList.length > 0; else noData">
+		<thead>
+			<tr>
+				<th>物料序號</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let c of mtlSeqList" (click)="select(c)">
+				<td><div class="content-font-size">{{c.mtlSeq}}</div></td>
+			</tr>
+		</tbody>
+	</table>
+</mat-dialog-content>
+
+<ng-template #noData>
+	<h2>
+		{{mesg}}
+	</h2>
+</ng-template>

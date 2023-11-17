@@ -1,0 +1,181 @@
+<div style="width: 95vw; margin: auto; margin-top: 2%; display: flex;">
+    <div class="func-btn-outter-div">
+        <div>
+            <button mat-mini-fab color="refresh-button" (click)="onQuery()">
+                <mat-icon>refresh</mat-icon>
+            </button>
+        </div>
+
+        <div style="width:50px;"></div>
+        <div>
+            <button mat-raised-button color="warn" class="throw-btn"
+                (click)="onInsert()">
+                <mat-icon style="margin-right: 10px;">arrow_outward</mat-icon>拋轉領用單</button>
+        </div>
+
+    </div>
+</div>
+<div class="annotation">
+    未備料時間大於2小時為
+    <span class="annotation-red">紅色</span>，介於1~2小時為
+    <span class="annotation-yellow">橙色</span>，備料完成底色為
+    <span class="annotation-green">綠色</span>。
+</div>    
+<div class="data-bolck">
+    <table cellspacing="0" style="width: 99%;">
+        <thead>
+            <th>
+                <div class="prompt-left">
+                    備料單號
+                </div>
+                <div class="prompt-left">
+                    提出時間
+                </div>                
+            </th>
+            <th>
+                <div class="prompt-left">
+                    提出人員
+                </div>
+                <div class="prompt-left">
+                    提出機台
+                </div>     
+            </th>
+            <th>
+                <div class="prompt-left">物料代號</div>
+            </th>
+            <th>
+                <div class="prompt-left">物料名稱</div>
+                <div class="prompt-left">尺寸規格</div>
+            </th>
+            <th>
+                <div class="prompt-left">A級品序號</div>
+                
+            </th>
+            <th>
+                <div>新舊品</div>
+                <div>庫位</div>
+            </th>
+            <th>
+                <div class="prompt-right">庫存量</div>
+                <div class="prompt-right">需求量</div>
+            </th>
+            <th>
+                <div class="prompt-right">領用量</div>
+            </th>
+            <th>
+                <div>
+                    備料<br>
+                    輸入
+                </div>
+            </th>
+        </thead>
+        <tbody>
+            <tr class="master-row" [ngStyle]="chkStatusBgColor(data.confYn)" *ngFor="let data of dataList; let i = index">
+                <td>
+                    <div class="combin-out">
+                        <div class="sep-line"></div>
+                        <div class="combin-in left">
+                            <div class="width-fit-content text-overflow" width="160px" [ngStyle]="deadLineColor(data.creaDate, data.prepTimeB, data.prepTimeE)">
+                                {{data.sheetNo}}
+                            </div>
+                            <div class="width-fit-content text-overflow" width="160px">
+                                {{dateFormate(data.creaDate)}}
+                            </div>
+                        </div>
+                    </div>             
+                </td>
+                <td>
+                    <div class="combin-out">
+                        <div class="sep-line"></div>
+                        <div class="combin-in left">
+                            <div class="width-fit-content text-overflow">
+                                {{data.empName}}
+                            </div>
+                            <div class="ceter-splite-line-hight"></div>
+                            <div class="width-fit-content text-overflow">
+                                {{data.mchNo}}
+                            </div>
+                        </div>
+                    </div>
+                </td>                
+                <td>
+                    <div class="combin-out">
+                        <div class="sep-line"></div>
+                        <div class="combin-in left text-overflow" width="200px" >
+                            {{data.mtlNo}}
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="combin-out">
+                        <div class="sep-line"></div>
+                        <div class="combin-in left">
+                            <div class="width-fit-content text-overflow" width="270px">
+                                {{data.mtlName}}
+                            </div>
+                            <div class="ceter-splite-line-hight"></div>
+                            <div class="width-fit-content text-overflow" width="270px">
+                                {{data.mtlSpec}}
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="combin-out">
+                        <div class="sep-line"></div>
+                        <div class="combin-in left text-overflow" width="100px">
+                            {{data.mtlSeq}}
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="combin-out">
+                        <div class="sep-line"></div>
+                        <div class="combin-in center">
+                            <div>
+                                {{data.newOld}}
+                            </div>
+                            <div class="ceter-splite-line-hight"></div>
+                            <div class="text-overflow" width="70px">
+                                {{data.location}}
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="combin-out">
+                        <div class="sep-line"></div>
+                        <div class="combin-in right">
+                            <div style="text-align: right;">
+                                {{data.stkQty | toThousandPipe}}
+                            </div>
+                            <div class="ceter-splite-line-hight"></div>
+                            <div style="text-align: right;">
+                                {{data.prepQty | toThousandPipe}}
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="combin-out">
+                        <div class="sep-line"></div>
+                        <div class="combin-in right">
+                            {{data.issuQty | toThousandPipe}}
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="combin-out">
+                        <div class="sep-line"></div>
+                        <div class="combin-in center">
+
+                            <!-- <button  style="font-size: 1.1rem; font-weight: 550;" (click)="modiChk(i)"><mat-icon style="margin-right: 10px;">edit</mat-icon>備料確認</button>                         -->
+                            <button mat-raised-button class="chk-btn" color="conf-button"
+                                (click)="modiChk(i)"><mat-icon>edit</mat-icon></button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

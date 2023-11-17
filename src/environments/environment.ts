@@ -3,9 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
+  production: false,
+  // production: true,
   // baseUrl: "http://192.168.1.56:9090/api"
-	baseUrl: "http://localhost:8080/api"
+	baseUrl: "http://localhost:8080/api",  
+  loginUrl: "http://localhost:8080/login"
 };
 
 /*

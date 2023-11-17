@@ -1,0 +1,141 @@
+.data-bolck {
+  margin: auto;
+  margin-top: 2%;
+  /* border-radius: 10px; */
+  font-size: 1.4vw;
+  width: 95vw;
+  height: 80%;
+  overflow-y: scroll;
+  font-weight: 500;
+}
+
+.data-bolck table tr td {
+  text-align: center;
+}
+
+.master-row{
+  border: none;
+  // background:linear-gradient(90deg,rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.558),rgba(255, 255, 255, 0));
+}
+
+// tr:nth-child(odd){
+//   background:rgb(230, 229, 229);
+// }
+
+tbody tr{
+  height: 9vh;
+  // box-shadow: 0px 1px 0px #6e6e6e;
+  background-color: white;
+}
+
+tbody tr td{
+  border-bottom: 5px solid rgb(235,237,236);
+}
+
+thead th{
+  border-bottom: 3px gray solid;
+  background-color: rgb(235,237,236);
+  line-height: 1.8;
+}
+
+.combin-out{
+  display: flex;
+}
+
+.sep-line{
+  width: 1px;border-left: 1px solid gray;height: 6vh;
+}
+
+.combin-in.left{
+  margin: auto;
+  margin-left: 5px;
+  text-align: left;
+}
+.combin-in.center{
+  margin: auto;
+  align-items: center;
+}
+.combin-in.right{
+  margin: auto;
+  margin-right: 5px;
+}
+
+.mat-conf-button{
+  background-color: rgb(253, 216, 53);
+}
+
+.mat-refresh-button{
+  background-color: rgb(77, 182, 172);
+
+}
+
+th{
+  height:5vh;
+  // font-size: 1.6vw;
+  position: sticky;
+  z-index: 500;
+  top: 0;
+  color: rgb(0, 0, 0);
+  background-color: white;
+  /* border-bottom: 1px solid lightgray; */
+}
+
+.prompt-left{
+  margin-left: 5px;
+  width: fit-content;
+}
+.prompt-right{
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.annotation{
+  width: fit-content; 
+  margin-left: 2.5%; 
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.annotation-red{
+  color: red;
+}
+
+.annotation-yellow{
+  color: rgb(254,158,38);
+}
+.annotation-green{
+  color: rgb(129, 199, 132)
+}
+
+.func-btn-outter-div{
+  display: flex;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.throw-btn{
+  font-size: 1.1rem;
+  font-weight: 550;
+  height: 40px;
+}
+
+.chk-btn{
+  font-size: 1.1rem;
+  font-weight: 550;
+}
+
+.ceter-splite-line-hight{
+  height: 1.1vh;
+}
+
+.width-fit-content{
+  width: fit-content;
+}
+
+
+.text-overflow{
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

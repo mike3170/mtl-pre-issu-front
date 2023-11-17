@@ -20,6 +20,12 @@ import { MenuComponent } from './menu/menu.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { MtlPreIssuComponent } from './mtl-pre-issu/mtl-pre-issu.component';
 import { AgBottonComponent } from './mtl-pre-issu/ag-botton/ag-botton.component';
+import { MtlPreIssuTableComponent } from './mtl-pre-issu-table/mtl-pre-issu-table.component';
+import { ModiChkComponent } from './mtl-pre-issu-table/modi-chk/modi-chk.component';
+import { MtlSeqListComponent } from './mtl-pre-issu-table/mtl-seq-list/mtl-seq-list.component';
+import { NewOldListComponent } from './mtl-pre-issu-table/new-old-list/new-old-list.component';
+import { LocationListComponent } from './mtl-pre-issu-table/location-list/location-list.component';
+import { toThousandPipe } from './mtl-pre-issu-table/toThousand.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +38,12 @@ import { AgBottonComponent } from './mtl-pre-issu/ag-botton/ag-botton.component'
     MenuComponent,
     MtlPreIssuComponent,
     AgBottonComponent,
+    MtlPreIssuTableComponent,
+    ModiChkComponent,
+    MtlSeqListComponent,
+    NewOldListComponent,
+    LocationListComponent,
+    toThousandPipe
   ],
   imports: [
     BrowserModule,
@@ -42,7 +54,7 @@ import { AgBottonComponent } from './mtl-pre-issu/ag-botton/ag-botton.component'
     SharedModule,
     HttpClientModule,
     CoreModule,
-    AgGridModule
+    AgGridModule,
   ],
   providers: [
     AuthService,

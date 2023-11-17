@@ -12,7 +12,7 @@ export class LoginGuard implements CanActivate, CanActivateChild {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {    
     if (this.router.url === '/') {
-      this.router.navigateByUrl('/login');
+      this.router.navigateByUrl('/nglogin');
       return false;
     }
     

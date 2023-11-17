@@ -24,8 +24,10 @@ export class LoginComponent implements OnInit {
 
   buildForm() {
     this.loginForm = this.fb.group({
-      "userName": ["MIKE"],
-      "passWord": ["123"]
+      "userName": [""],
+      "passWord": [""]
+      // "userName": ["MIKE"],
+      // "passWord": ["123"]
     }, { updateOn: "blur" })
   }
 
@@ -46,11 +48,11 @@ export class LoginComponent implements OnInit {
             isAuth: resp.isAuth
           };
           
-          this.router.navigateByUrl('/mtlpreissu');
+          this.router.navigateByUrl('/mtlpreissutable');
         } else {
           this.loginForm.reset();
           this.authService.authModel = null;
-          this.router.navigateByUrl('/login');
+          this.router.navigateByUrl('/nglogin');
           this.dialogService.error('使用者帳號/密碼組合有誤\n'+'請重新輸入');
         }
       });

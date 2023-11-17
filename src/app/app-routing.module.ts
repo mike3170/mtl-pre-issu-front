@@ -8,17 +8,19 @@ import { MainComponent } from './main/main.component';
 import { MenuComponent } from './menu/menu.component';
 import { TestComponent } from './test/test.component';
 import { MtlPreIssuComponent } from './mtl-pre-issu/mtl-pre-issu.component';
+import { MtlPreIssuTableComponent } from './mtl-pre-issu-table/mtl-pre-issu-table.component';
 
 
 const routes: Routes = [
-  { path: "", redirectTo: "login", pathMatch: "full" },  
-  { path: "login", component: LoginComponent },
+  { path: "", redirectTo: "/nglogin", pathMatch: "full" },  
+  { path: "nglogin", component: LoginComponent },
   { path: "main", component: MainComponent, canActivate: [LoginGuard] },
   { path: "menu", component: MenuComponent, canActivate: [LoginGuard] },  
   { path: "mtlpreissu", component: MtlPreIssuComponent, canActivate: [LoginGuard] },
+  { path: "mtlpreissutable", component: MtlPreIssuTableComponent, canActivate: [LoginGuard] },
   { path: "test", component: TestComponent},
   { path: "**", component: NotFoundComponent},
-
+  
   // { path: "", redirectTo: "login", pathMatch: "full" },
   // { path: "login", component: LoginComponent },  
   // {

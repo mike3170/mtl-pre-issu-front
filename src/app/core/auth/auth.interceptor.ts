@@ -26,7 +26,7 @@ export class AuthInterceptor implements HttpInterceptor {
 	intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
 		if (!this.authService.authModel?.isAuth) {
-			this.router.navigateByUrl('/login');
+			this.router.navigateByUrl('/nglogin');
 			// return of();
 		}
 		request = request.clone({
@@ -43,7 +43,7 @@ export class AuthInterceptor implements HttpInterceptor {
 					if (error.status === 401 || error.status === 200) {
 						// this.authService.setCurrentUser(null);
 						this.dialogService.error('登入逾時或權限不足，請重新登入');
-						this.router.navigateByUrl('/login');
+						this.router.navigateByUrl('/nglogin');
 					}
 					return throwError(error);
 				})

@@ -1,0 +1,62 @@
+<div class="chk-banner">
+    <div class="tilte-bar">備料資料輸入視窗</div>
+</div>
+<form [formGroup]="formModi">
+    <table>
+        <tr>
+            <td>物料代號</td>
+            <td><input formControlName="mtlNo" disabled width="450px" /> </td>
+        </tr>
+        <tr>
+            <td>物料名稱</td>
+            <td><input formControlName="mtlName" disabled width="450px" /></td>
+        </tr>
+        <tr>
+            <td>規格</td>
+            <td><input formControlName="mtlSpec" disabled width="450px" /></td>
+        </tr>
+        <tr>
+            <td>物料序號</td>
+            <td>
+                <input formControlName="mtlSeq" />
+                <button mat-icon-button tabindex="-1" (click)="searchMtlSeq()">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>新舊</td>
+            <td>
+                <input formControlName="newOld" width="50px" />
+                <button mat-icon-button tabindex="-1" (click)="searchNewOld()">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>庫位</td>
+            <td>
+                <input formControlName="location">
+                <button mat-icon-button tabindex="-1" (click)="searchLocation()">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                領用量
+            </td>
+            <td>
+                <input formControlName="issuQty" appNumeric>
+            </td>
+        </tr>
+    </table>
+
+    <div class="buttons">
+        <button type="button" mat-raised-button (click)="cancel()"
+            color="button-cancel"><mat-icon>close</mat-icon>取消</button>
+        <div style="width: 2%;"></div>
+        <button type="button" mat-raised-button (click)="onConfirmClick()"
+            color="button-chk"><mat-icon>check</mat-icon>確認</button>
+    </div>
+</form>
