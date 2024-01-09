@@ -6,10 +6,10 @@ export const environment = {
   production: false,
   // production: true,
   // baseUrl: "http://192.168.1.56:9090/api"
-	baseUrl: "http://localhost:8080/mtl-pre-issu/api",  
-  loginUrl: "http://localhost:8080/mtl-pre-issu/login"
-	// baseUrl: "http://192.168.1.112:8080/mtl-pre-issu/api",  
-  // loginUrl: "http://192.168.1.112:8080/mtl-pre-issu/login"
+	// baseUrl: "http://localhost:8080/mtl-pre-issu/api",  
+  // loginUrl: "http://localhost:8080/mtl-pre-issu/login"
+	baseUrl: "http://192.168.1.112:8080/mtl-pre-issu/api",  
+  loginUrl: "http://192.168.1.112:8080/mtl-pre-issu/login"
 };
 
 /*

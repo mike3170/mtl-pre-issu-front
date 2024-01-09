@@ -40,21 +40,10 @@ export class MtlPreIssuTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.onQuery();
-    console.log("ngoninit---");
-    console.log(this.isChkActive);
-
-    if (this.isChkActive == true) {
-      // setInterval((): void => {
-      //   this.chkNewSheet();
-      // }, 600000);
-      let count = 0
-      const iv = setInterval((): void => {
+    if (this.isChkActive == true) {    
+      setInterval((): void => {  
         this.chkNewSheet();
-        count++
-        if (count >= 1) {
-          clearInterval(iv);
-        }
-      }, 15000);
+      }, 600000);
     }
   }
   async onInsert() {
@@ -158,43 +147,47 @@ export class MtlPreIssuTableComponent implements OnInit {
   }
 
   chkNewSheet() {
-    var maxCreaDate:Date = new Date('2000-01-01T00:00:00');
+    if (this.isChkActive) {
+      var maxCreaDate: Date = new Date('2000-01-01T00:00:00');
+      const audioElement = new Audio("assets/alert_sound.mp3");
 
-    this.dataList.forEach(data => {  
-      if (
-        Number(data.creaDate.replace(/-/gm, '').replace(/T/gm, '').replace(/:/gm, '')) >
-        Number(this.dateFormate4Tran(maxCreaDate).replace(/-/gm, '').replace(/T/gm, '').replace(/:/gm, ''))
-        ) {        
-        maxCreaDate = new Date(data.creaDate);
-      }
+      this.dataList.forEach(data => {
+        if (
+          Number(data.creaDate.replace(/-/gm, '').replace(/T/gm, '').replace(/:/gm, '')) >
+          Number(this.dateFormate4Tran(maxCreaDate).replace(/-/gm, '').replace(/T/gm, '').replace(/:/gm, ''))
+        ) {
+          maxCreaDate = new Date(data.creaDate);
+        }
 
-    });
+      });
 
-    this.mtlPreIssuSvc.chkNewSheet(this.dateFormate4Tran(maxCreaDate)).subscribe(resp => {
-      if (resp.data) {
-        let playCount: number = 0;
-        const iv = setInterval(function () {
-          playCount++;
+      this.mtlPreIssuSvc.chkNewSheet(this.dateFormate4Tran(maxCreaDate)).subscribe(resp => {
+        if (resp.data) {
 
-          const audioElement = new Audio("/assets/alert_sound.mp3");
-          audioElement.play();
+          let playCount: number = 0;
+          const iv = setInterval(function () {
+            playCount++;
+            
+            audioElement.play();
 
-          if (playCount >= 10) {
-            clearInterval(iv);
-          }
-        }, 1000);
+            if (playCount >= 10) {
+              clearInterval(iv);
+            }
+          }, 4000);
 
-        this.dialogService.info("請注意，有新單!!");
+          this.isChkActive = false;
 
-        this.isChkActive = false;
-        console.log("isChkActive:" + this.isChkActive);
+          this.dialogService.info("請注意，有新單!!")
+          .afterClosed()
+          .subscribe(x =>{
+            this.isChkActive = true;
+          });
 
-      }
+        }
 
-    })
+      })
+    }
   }
-
-
 
   async modiChk(index: number) {
     const data = this.dataList[index];

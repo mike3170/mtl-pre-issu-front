@@ -18,7 +18,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   login(userName: string, passWord: string) {
-        console.log(userName+'  '+passWord);       
+        // console.log(userName+'  '+passWord);       
         
     const body = new HttpParams()
       .set('username', userName)
