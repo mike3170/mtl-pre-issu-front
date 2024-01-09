@@ -26,6 +26,7 @@ import { MtlSeqListComponent } from './mtl-pre-issu-table/mtl-seq-list/mtl-seq-l
 import { NewOldListComponent } from './mtl-pre-issu-table/new-old-list/new-old-list.component';
 import { LocationListComponent } from './mtl-pre-issu-table/location-list/location-list.component';
 import { toThousandPipe } from './mtl-pre-issu-table/toThousand.pipe';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { toThousandPipe } from './mtl-pre-issu-table/toThousand.pipe';
   ],
   providers: [
     AuthService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],

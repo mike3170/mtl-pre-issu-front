@@ -21,7 +21,12 @@ export class MtlPreIssuTableService {
 	update(data: any): Observable<Api> {
 		const url = `${this.baseUrl}/mtlpreppad/update`;
 		return this.http.put<Api>(url, data);
-	}	
+	}
+
+	delete(data: any): Observable<Api> {
+		const url = `${this.baseUrl}/mtlpreppad/delete`;
+		return this.http.put<Api>(url, data);
+	}
 
 	findAll(): Observable<Api> {
 		const url = `${this.baseUrl}/mtlpreppad/all`;
@@ -41,5 +46,10 @@ export class MtlPreIssuTableService {
 	getLocation(mtlNo: string, mtlSeq:string, newOld:string): Observable<Api>{
 		const url = `${this.baseUrl}/mtlpreppad/getlocation/${mtlNo}/${mtlSeq}/${newOld}`;
 		return this.http.get<Api>(url);		
-	}		
+	}
+
+	chkNewSheet(maxCreaDate: string){
+		const url = `${this.baseUrl}/mtlpreppad/chkNewSheet/${maxCreaDate}`;
+		return this.http.get<Api>(url);		
+	}
 }

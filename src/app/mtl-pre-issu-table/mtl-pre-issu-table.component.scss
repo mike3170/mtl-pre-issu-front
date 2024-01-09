@@ -69,6 +69,12 @@ thead th{
 
 }
 
+.mat-insert-btn{
+  background-color: rgb(67, 160, 71);
+  color: white;
+}
+
+
 th{
   height:5vh;
   // font-size: 1.6vw;
@@ -114,7 +120,7 @@ th{
   margin-right: 0;
 }
 
-.throw-btn{
+.btn-size{
   font-size: 1.1rem;
   font-weight: 550;
   height: 40px;
@@ -139,3 +145,4 @@ th{
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+

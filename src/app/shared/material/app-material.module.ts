@@ -16,6 +16,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatDividerModule } from '@angular/material/divider';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { DateAdapter, MatRippleModule, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 
@@ -49,6 +50,7 @@ const modules = [
 	MatProgressSpinnerModule,
 	MatDividerModule,
 	MatRippleModule,
+	MatCheckboxModule,
 
 	MatDatepickerModule,
 	MatMomentDateModule,

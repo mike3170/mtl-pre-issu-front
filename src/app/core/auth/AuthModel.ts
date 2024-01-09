@@ -1,4 +1,4 @@
 export interface AuthModel {
-    isAuth: string;
-    user: string;    
+    isAuth: string | null;
+    user: string | null;    
 }

@@ -54,7 +54,6 @@ export class ModiChkComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.data.data.issuQty = null;
     this.formModi.controls['mtlNo'].setValue(this.data.data.mtlNo);
     this.formModi.controls['mtlName'].setValue(this.data.data.mtlName);
     this.formModi.controls['mtlSpec'].setValue(this.data.data.mtlSpec);
@@ -69,7 +68,7 @@ export class ModiChkComponent implements OnInit {
     this.formModi.controls['prepQty']?.setValue(this.data.data.prepQty);
     this.formModi.controls['issuQty']?.setValue(this.data.data.issuQty);
     this.formModi.controls['confYn']?.setValue(this.data.data.confYn);
-    this.formModi.controls['confDate']?.setValue(this.data.data.confDate);
+    this.formModi.controls['confDate']?.setValue(this.data.data.confDate);    
   }
 
   buildForm() {
@@ -94,15 +93,15 @@ export class ModiChkComponent implements OnInit {
   }
 
   async onConfirmClick() {
-    console.log(this.formModi.controls['newOld'].value);
-    console.log(this.formModi.value);
+    // console.log(this.formModi.controls['newOld'].value);
+    // console.log(this.formModi.value);
 
     if (this.newOldCtrl.value != "Y" && this.newOldCtrl.value != "N") {
       this.dialogService.error("新舊品只允許輸入Y或N");
       return;
     }
     if (StrUtils.isEmptyObject(this.locationCtrl.value)) {
-      this.dialogService.error("儲位不可為空");
+      this.dialogService.error("庫位不可為空");
       return;
     }
 
